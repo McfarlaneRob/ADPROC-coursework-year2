@@ -3,9 +3,11 @@ package adproc.coursework;
 import java.util.ArrayList;
 
 /**
+ *
  * @author up790070
  */
 public class Order {
+
     ArrayList<Box> boxes = new ArrayList();
 
     public void addBox(Box toAdd) {
@@ -23,16 +25,23 @@ public class Order {
         }
         return cost;
     }
-    
-    public int numBoxes(){
+
+    public int numBoxes() {
         int amount = 0;
-        for(int i=0; i<boxes.size(); i++){
+        for (int i = 0; i < boxes.size(); i++) {
             amount += boxes.get(i).quantity;
         }
         return amount;
     }
-    
-    public int numBoxTypes(){
+
+    public int numBoxTypes() {
         return boxes.size();
+    }
+
+    public void clearOrder() {
+        while(boxes.size() > 0){
+            boxes.remove(0);
+        }
+        System.out.println("Order has been cleared!");
     }
 }
