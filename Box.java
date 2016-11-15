@@ -1,13 +1,14 @@
 package adproc.coursework;
 
 /**
+ *
  * @author up790070
  */
 public class Box {
-    int cardGrade, colours, quantity;
-    double width, height, length;
+
+    int cardGrade, colours, quantity, width, height, length;
     Boolean bottomReinforce, cornerReinforce, sealableTop;
-    
+
     public Box(int w, int h, int l, int grade, int col, Boolean bottom, Boolean corners, Boolean top, int num) {
         width = w; // cm
         height = h; // cm
@@ -19,22 +20,58 @@ public class Box {
         sealableTop = top;
         quantity = num;
     }
-    
-    public double getArea() {
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getGrade() {
+        return cardGrade;
+    }
+
+    public int getColour() {
+        return colours;
+    }
+
+    public Boolean getBottomReinforce() {
+        return bottomReinforce;
+    }
+
+    public Boolean getCornerReinforce() {
+        return cornerReinforce;
+    }
+
+    public Boolean getSealableTop() {
+        return sealableTop;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double calcArea() {
         double area = (2 * (length * width)) + (2 * (width * height)) + (2 * (length * height));
         return area;
     }
 
     public double calcCost() {
         double costs[] = {0.5, 0.6, 0.72, 0.9, 1.4};
-        double areaMeters = this.getArea() / 10000;
+        double areaMeters = this.calcArea() / 10000;
         double basicCost = areaMeters * costs[cardGrade - 1];
         double extraCost = basicCost * (extraCostsPercentage() / 100);
         double cost = basicCost + extraCost;
         cost = cost * quantity;
         return cost;
     }
-    
+
     public boolean checkBox() {
         Boolean validity = false;
         if (cardGrade <= 0 || cardGrade > 5 || colours < 0 || colours > 2) { // check all parameters within acceptable ranges
