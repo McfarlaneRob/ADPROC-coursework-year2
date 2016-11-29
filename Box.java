@@ -4,22 +4,10 @@ package adproc.coursework;
  *
  * @author up790070
  */
-public class Box {
+public abstract class Box {
 
     int cardGrade, colours, quantity, width, height, length;
     Boolean bottomReinforce, cornerReinforce, sealableTop;
-
-    public Box(int w, int h, int l, int grade, int col, Boolean bottom, Boolean corners, Boolean top, int num) {
-        width = w; // cm
-        height = h; // cm
-        length = l; // cm
-        cardGrade = grade;
-        colours = col; // 0 - 2
-        bottomReinforce = bottom;
-        cornerReinforce = corners;
-        sealableTop = top;
-        quantity = num;
-    }
 
     public int getWidth() {
         return width;
