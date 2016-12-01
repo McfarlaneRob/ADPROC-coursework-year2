@@ -41,7 +41,7 @@ public class GUI extends javax.swing.JFrame {
         bottomReinChckBx = new javax.swing.JCheckBox();
         cornerReinChckBx = new javax.swing.JCheckBox();
         sealableChckBx = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelQuantity = new javax.swing.JLabel();
         PlaceOrderBttn = new javax.swing.JButton();
         clearOrderBttn = new javax.swing.JButton();
         bottomFiller = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
@@ -96,8 +96,8 @@ public class GUI extends javax.swing.JFrame {
         sealableChckBx.setText("Sealable Top");
         getContentPane().add(sealableChckBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 138, -1, -1));
 
-        jLabel6.setText("Quantity");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+        jLabelQuantity.setText("Quantity");
+        getContentPane().add(jLabelQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
         PlaceOrderBttn.setText("Place Order");
         PlaceOrderBttn.addActionListener(new java.awt.event.ActionListener() {
@@ -228,12 +228,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> coloursCombo;
     private javax.swing.JCheckBox cornerReinChckBx;
     private javax.swing.JSpinner heightSpinner;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelCardGrade;
     private javax.swing.JLabel jLabelColours;
     private javax.swing.JLabel jLabelDimHeader;
     private javax.swing.JLabel jLabelHeight;
     private javax.swing.JLabel jLabelLength;
+    private javax.swing.JLabel jLabelQuantity;
     private javax.swing.JLabel jLabelWidth;
     private javax.swing.JSpinner lengthSpinner;
     private javax.swing.JSpinner quantitySpinner;
