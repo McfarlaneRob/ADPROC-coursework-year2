@@ -31,13 +31,13 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelWidth = new javax.swing.JLabel();
+        jLabelLength = new javax.swing.JLabel();
+        jLabelHeight = new javax.swing.JLabel();
         cardGradeCombo = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelCardGrade = new javax.swing.JLabel();
         coloursCombo = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        jLabelColours = new javax.swing.JLabel();
         bottomReinChckBx = new javax.swing.JCheckBox();
         cornerReinChckBx = new javax.swing.JCheckBox();
         sealableChckBx = new javax.swing.JCheckBox();
@@ -46,7 +46,7 @@ public class GUI extends javax.swing.JFrame {
         clearOrderBttn = new javax.swing.JButton();
         bottomFiller = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
         clearBttn = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        jLabelDimHeader = new javax.swing.JLabel();
         addToOrderBttn = new javax.swing.JButton();
         widthSpinner = new javax.swing.JSpinner();
         lengthSpinner = new javax.swing.JSpinner();
@@ -61,29 +61,29 @@ public class GUI extends javax.swing.JFrame {
         setName("frame"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Width: ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 25, -1, -1));
+        jLabelWidth.setText("Width: ");
+        getContentPane().add(jLabelWidth, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 25, -1, -1));
 
-        jLabel2.setText("Length: ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 51, -1, -1));
+        jLabelLength.setText("Length: ");
+        getContentPane().add(jLabelLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 51, -1, -1));
 
-        jLabel3.setText("Height: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 79, -1, -1));
+        jLabelHeight.setText("Height: ");
+        getContentPane().add(jLabelHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 79, -1, -1));
 
         cardGradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
         cardGradeCombo.setName(""); // NOI18N
         cardGradeCombo.setNextFocusableComponent(coloursCombo);
         getContentPane().add(cardGradeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 79, -1));
 
-        jLabel4.setText("Card Grade:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+        jLabelCardGrade.setText("Card Grade:");
+        getContentPane().add(jLabelCardGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         coloursCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour", "One Colour", "Two Colour" }));
         coloursCombo.setNextFocusableComponent(bottomReinChckBx);
         getContentPane().add(coloursCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
-        jLabel5.setText("Colours:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
+        jLabelColours.setText("Colours:");
+        getContentPane().add(jLabelColours, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
 
         bottomReinChckBx.setText("Bottom Reinforcement");
         bottomReinChckBx.setNextFocusableComponent(cornerReinChckBx);
@@ -125,8 +125,8 @@ public class GUI extends javax.swing.JFrame {
         });
         getContentPane().add(clearBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
 
-        jLabel7.setText("Dimensions (cm)");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 5, -1, -1));
+        jLabelDimHeader.setText("Dimensions (cm)");
+        getContentPane().add(jLabelDimHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 5, -1, -1));
 
         addToOrderBttn.setText("Add To Order");
         addToOrderBttn.addActionListener(new java.awt.event.ActionListener() {
@@ -147,17 +147,25 @@ public class GUI extends javax.swing.JFrame {
 
         heightSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         getContentPane().add(heightSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 76, 65, -1));
+
+        quantitySpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         getContentPane().add(quantitySpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 40, -1));
 
         pack();
     }// </editor-fold>                        
 
     private void PlaceOrderBttnActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        
+        order.displayOrder();
     }                                              
 
     private void clearOrderBttnActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        order.clearOrder();
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Are you sure you want \nto remove this order?", "Warning", dialogButton);
+        if (dialogResult == JOptionPane.YES_OPTION) {
+            order.clearOrder();
+        }
+
+        
     }                                              
 
     private void clearBttnActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -204,7 +212,7 @@ public class GUI extends javax.swing.JFrame {
         if (h == 0 || w == 0 || l == 0 || q == 0) {
             validity = false;
         }
-        
+
         return validity;
     }
 
@@ -220,13 +228,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> coloursCombo;
     private javax.swing.JCheckBox cornerReinChckBx;
     private javax.swing.JSpinner heightSpinner;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelCardGrade;
+    private javax.swing.JLabel jLabelColours;
+    private javax.swing.JLabel jLabelDimHeader;
+    private javax.swing.JLabel jLabelHeight;
+    private javax.swing.JLabel jLabelLength;
+    private javax.swing.JLabel jLabelWidth;
     private javax.swing.JSpinner lengthSpinner;
     private javax.swing.JSpinner quantitySpinner;
     private javax.swing.JCheckBox sealableChckBx;
