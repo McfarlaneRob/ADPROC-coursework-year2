@@ -6,7 +6,7 @@ package adproc.coursework;
  */
 public abstract class Box {
 
-    int cardGrade, colours, quantity, width, height, length;
+    int cardGrade, colours, quantity, width, height, length, percentageExtra;
     Boolean bottomReinforce, cornerReinforce, sealableTop;
 
     public int getWidth() {
@@ -46,18 +46,12 @@ public abstract class Box {
     }
 
     public double calcArea() {
-        double area = (2 * (length * width)) + (2 * (width * height)) + (2 * (length * height));
+        double lengthMetres = (double) length / 100;
+        double widthMetres = (double) width / 100;
+        double heightMetres = (double) height / 100;
+        double area = (2 * (lengthMetres * widthMetres)) + (2 * (widthMetres * heightMetres)) + (2 * (lengthMetres * heightMetres));
+        
         return area;
-    }
-
-    public double calcCost() {
-        double costs[] = {0.5, 0.6, 0.72, 0.9, 1.4};
-        double areaMeters = this.calcArea() / 10000;
-        double basicCost = areaMeters * costs[cardGrade - 1];
-        double extraCost = basicCost * (extraCostsPercentage() / 100);
-        double cost = basicCost + extraCost;
-        cost = cost * quantity;
-        return cost;
     }
 
     public boolean checkBox() {
@@ -78,22 +72,4 @@ public abstract class Box {
         return validity;
     }
 
-    public double extraCostsPercentage() {
-        double extra = 0;
-        if (colours == 1) {
-            extra += 13;
-        } else if (colours == 2) {
-            extra += 16;
-        }
-        if (bottomReinforce) {
-            extra += 14;
-        }
-        if (cornerReinforce) {
-            extra += 10;
-        }
-        if (sealableTop) {
-            extra += 8;
-        }
-        return extra;
-    }
 }
