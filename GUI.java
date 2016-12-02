@@ -71,6 +71,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(jLabelHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 79, -1, -1));
 
         cardGradeCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5" }));
+        cardGradeCombo.setToolTipText("choose the desired grade of card");
         cardGradeCombo.setName(""); // NOI18N
         cardGradeCombo.setNextFocusableComponent(coloursCombo);
         getContentPane().add(cardGradeCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 79, -1));
@@ -79,6 +80,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(jLabelCardGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
         coloursCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Colour", "One Colour", "Two Colour" }));
+        coloursCombo.setToolTipText("choose amount of colours");
         coloursCombo.setNextFocusableComponent(bottomReinChckBx);
         getContentPane().add(coloursCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
@@ -100,6 +102,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(jLabelQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
         PlaceOrderBttn.setText("Place Order");
+        PlaceOrderBttn.setToolTipText("get a quote on the current order");
         PlaceOrderBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PlaceOrderBttnActionPerformed(evt);
@@ -108,6 +111,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(PlaceOrderBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         clearOrderBttn.setText("Clear Order");
+        clearOrderBttn.setToolTipText("clear the current order");
         clearOrderBttn.setNextFocusableComponent(PlaceOrderBttn);
         clearOrderBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +122,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(bottomFiller, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, 70));
 
         clearBttn.setText("Clear");
+        clearBttn.setToolTipText("clear all of the current fields");
         clearBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearBttnActionPerformed(evt);
@@ -129,6 +134,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(jLabelDimHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 5, -1, -1));
 
         addToOrderBttn.setText("Add To Order");
+        addToOrderBttn.setToolTipText("add this box to the order");
         addToOrderBttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToOrderBttnActionPerformed(evt);
@@ -137,15 +143,19 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().add(addToOrderBttn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
 
         widthSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        widthSpinner.setToolTipText("enter box width in cm");
+        widthSpinner.setFocusCycleRoot(true);
         widthSpinner.setName(""); // NOI18N
         widthSpinner.setNextFocusableComponent(lengthSpinner);
         getContentPane().add(widthSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 22, 65, -1));
 
         lengthSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        lengthSpinner.setToolTipText("enter box length in cm");
         lengthSpinner.setNextFocusableComponent(heightSpinner);
         getContentPane().add(lengthSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 50, 65, -1));
 
         heightSpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        heightSpinner.setToolTipText("enter box height in cm");
         getContentPane().add(heightSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 76, 65, -1));
 
         quantitySpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
