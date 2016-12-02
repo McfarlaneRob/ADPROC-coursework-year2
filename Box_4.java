@@ -21,7 +21,10 @@ public class Box_4 extends Box {
         cornerReinforce = false;
         bottomReinforce = true;
         colours = 2;
-
+        percentageExtra = 30;
+        costPerMetre = 0.9;
     }
+    
+
 
 }
