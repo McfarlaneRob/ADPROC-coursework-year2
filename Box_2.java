@@ -21,20 +21,7 @@ public class Box_2 extends Box {
         cornerReinforce = false;
         bottomReinforce = false;
         colours = 1;
-        percentageExtra = 13;
-    }
-    
-    public double calcCost() {
-        if (sealableTop) {
-            percentageExtra += 8;
-        }
-        double area = this.calcArea();
-        double basicCost = area * 0.6;
-        double extraCost = basicCost * (percentageExtra / 100);
-        double cost = basicCost + extraCost;
-        cost = cost * quantity;
 
-        return cost;
     }
 
 }
